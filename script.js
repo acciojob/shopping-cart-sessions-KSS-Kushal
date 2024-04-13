@@ -20,8 +20,8 @@ function renderProducts() {
     productList.appendChild(li);
   });
 }
-sessionStorage.setItem('data',localStorage.getItem('data'))
-let cartData = JSON.parse(sessionStorage.getItem('data'));
+// sessionStorage.setItem('data',localStorage.getItem('data'))
+let cartData = JSON.parse(sessionStorage.getItem('cart'));
 const cartList = document.getElementById("cart-list");
 // Render cart list
 function renderCart() {
@@ -33,8 +33,8 @@ function renderCart() {
 		    cartList.appendChild(li);
 		})
 	}
-	sessionStorage.setItem('data',JSON.stringify(cartData));
-	localStorage.setItem('data', JSON.stringify(cartData));
+	sessionStorage.setItem('cart',JSON.stringify(cartData));
+	// localStorage.setItem('data', JSON.stringify(cartData));
 }
 
 // Add item to cart
