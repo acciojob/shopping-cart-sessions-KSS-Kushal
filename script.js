@@ -39,33 +39,36 @@ function renderCart() {
 // Add item to cart
 function addToCart(productId) {
 	const item = products.filter((v)=>v.id===productId)[0];
-	if (cartData===null) {
-		cartData = [item];
-	} else {
-		cartData.push(item);
-		cartData.sort((a,b)=>a.price-b.price);
-	}
-	
+	// if (cartData===null) {
+	// 	cartData = [item];
+	// } else {
+		
+	// 	cartData.sort((a,b)=>a.price-b.price);
+	// }
+	cartData.push({id:item.id, name: item.name, price: item.price});
+	cartData.sort((a,b)=>a.price-b.price);
 	renderCart();
 }
 
 // Remove item from cart
 function removeFromCart(productId) {
-	const item = products.filter((v)=>v.id===productId)[0];
-	if (cartData!==null) {
-		const index = cartData.indexOf(item);
-		if (index>-1) {
-			cartData.splice(index, 1);
-		}
+	// const item = products.filter((v)=>v.id===productId)[0];
+	// if (cartData!==null) {
+	// 	const index = cartData.indexOf(item);
+	// 	if (index>-1) {
+	// 		cartData.splice(index, 1);
+	// 	}
 		
-		renderCart();
-	}
+	// 	renderCart();
+	// }
+	cartData= cartData.filter(v=>v.id!==productId);
+	renderCart()
 }
 
 // Clear cart
 function clearCart() {
 	cartData = [];
-	sessionStorage.clear();
+	// sessionStorage.clear();
 	renderCart();
 }
 
