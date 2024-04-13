@@ -44,7 +44,7 @@ function addToCart(productId) {
 		cartData = [item];
 	} else {
 		cartData.push(item)
-		cartData.sort((a,b)=>a.price-b.price);
+		// cartData.sort((a,b)=>a.price-b.price);
 	}
 	// cartData.push({id:item.id, name: item.name, price: item.price});
 	// cartData.sort((a,b)=>a.price-b.price);
