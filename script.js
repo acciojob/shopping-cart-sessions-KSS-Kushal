@@ -33,6 +33,7 @@ function renderCart() {
 		    cartList.appendChild(li);
 		})
 	}
+	sessionStorage.setItem('data',JSON.stringify(cartData));
 }
 
 // Add item to cart
@@ -44,7 +45,7 @@ function addToCart(productId) {
 		cartData.push(item);
 		cartData.sort((a,b)=>a.price-b.price);
 	}
-	sessionStorage.setItem('data',JSON.stringify(cartData));
+	
 	renderCart();
 }
 
@@ -56,7 +57,7 @@ function removeFromCart(productId) {
 		if (index>-1) {
 			cartData.splice(index, 1);
 		}
-		sessionStorage.setItem('data',JSON.stringify(cartData));
+		
 		renderCart();
 	}
 }
