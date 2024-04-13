@@ -52,23 +52,23 @@ function addToCart(productId) {
 
 // Remove item from cart
 function removeFromCart(productId) {
-	// const item = products.filter((v)=>v.id===productId)[0];
-	// if (cartData!==null) {
-	// 	const index = cartData.indexOf(item);
-	// 	if (index>-1) {
-	// 		cartData.splice(index, 1);
-	// 	}
+	const item = products.filter((v)=>v.id===productId)[0];
+	if (cartData!==null) {
+		const index = cartData.indexOf(item);
+		if (index>-1) {
+			cartData.splice(index, 1);
+		}
 		
-	// 	renderCart();
-	// }
-	cartData= cartData.filter(v=>v.id!==productId);
-	renderCart()
+		renderCart();
+	}
+	// cartData= cartData.filter(v=>v.id!==productId);
+	// renderCart()
 }
 
 // Clear cart
 function clearCart() {
 	cartData = [];
-	// sessionStorage.clear();
+	sessionStorage.clear();
 	renderCart();
 }
 
