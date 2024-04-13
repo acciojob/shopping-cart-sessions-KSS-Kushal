@@ -39,14 +39,14 @@ function renderCart() {
 // Add item to cart
 function addToCart(productId) {
 	const item = products.filter((v)=>v.id===productId)[0];
-	// if (cartData===null) {
-	// 	cartData = [item];
-	// } else {
+	if (cartData===null) {
+		cartData = [item];
+	} else {
 		
-	// 	cartData.sort((a,b)=>a.price-b.price);
-	// }
-	cartData.push({id:item.id, name: item.name, price: item.price});
-	cartData.sort((a,b)=>a.price-b.price);
+		cartData.sort((a,b)=>a.price-b.price);
+	}
+	// cartData.push({id:item.id, name: item.name, price: item.price});
+	// cartData.sort((a,b)=>a.price-b.price);
 	renderCart();
 }
 
